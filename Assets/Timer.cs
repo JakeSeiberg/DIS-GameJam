@@ -26,8 +26,10 @@ public class Timer : MonoBehaviour
     public void loseTime(int seconds)
     {
         currentTime -= seconds;
-        if (seconds > 0):
+        if (seconds > 0)
+        {
             box.takeDamage();
+        }
     }
 
 }
