@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
@@ -11,6 +10,10 @@ public class MenuController : MonoBehaviour
 
     public void OnQuitButton(){
         Application.Quit();
+    }
+
+    public void OnPlayAgainButton(){
+        SceneManager.LoadScene(0);
     }
 
 }
