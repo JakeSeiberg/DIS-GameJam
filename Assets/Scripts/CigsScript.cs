@@ -7,11 +7,14 @@ public class CigsScript : MonoBehaviour
 
     static public int cigsCount;
 
+    private Timer time;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         cigsRenderer = GetComponent<SpriteRenderer>();
         cigsCount = 0;
+        time = FindFirstObjectByType<Timer>();
     }
 
     // Update is called once per frame
@@ -19,7 +22,6 @@ public class CigsScript : MonoBehaviour
     {
         cigsRenderer.sprite = cigsImages[cigsCount % cigsImages.Length];
         if(cigsCount > 7){
-            Timer.currentTime += 30;
             cigsCount = 0;
         }
     }

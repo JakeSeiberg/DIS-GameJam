@@ -4,17 +4,19 @@ public class CigsPickup : MonoBehaviour
 {
     [Header("Movement Settings")]
     [Tooltip("How fast does the cigarette pickup move (units per second)?")]
-    public float speed = 15f;
+    public float speed = RoadSpawner.gameSpeed;
     
     [Tooltip("How long does the pickup live before being automatically destroyed (in seconds)?")]
     public float lifeTime = 10f;
     
     // The downward direction (normalized)
     private Vector2 direction = new Vector2(0, -1);
+    private Timer time;
 
     void Start()
     {
         direction.Normalize();
+        time = FindFirstObjectByType<Timer>();
     }
 
     void Update()
@@ -42,6 +44,7 @@ public class CigsPickup : MonoBehaviour
             if (cigsManager != null)
             {
                 CigsScript.cigsCount++;
+                time.loseTime(-3); 
             }
             
             // Destroy the cigarette pickup upon collection.
