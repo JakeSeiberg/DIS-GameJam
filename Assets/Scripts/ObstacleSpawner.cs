@@ -7,7 +7,7 @@ public class ObstacleSpawner : MonoBehaviour
     [Tooltip("How many obstacles spawn per second?")]
     public float spawnRate = 1;
     [Tooltip("The prefab that is to be instantiated as obstacles")]
-    public GameObject[] obstaclePrefab;
+    public GameObject obstaclePrefab;
     private float lastSpawnTime = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
