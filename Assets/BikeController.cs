@@ -3,11 +3,11 @@ using UnityEngine;
 public class BikeController : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float speed = 10f;
+    public float speed = 2f;
     
-    public float minX = -10f;
+    public float minX = -5.6f;
     
-    public float maxX = 10f;
+    public float maxX = 5.6f;
 
     void Update()
     {
