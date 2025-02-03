@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      car-truck4_0: 5267050318456591284
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
