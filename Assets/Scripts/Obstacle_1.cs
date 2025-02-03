@@ -3,7 +3,7 @@ using UnityEngine;
 public class Obstacle_1 : MonoBehaviour
 {
     [Tooltip("How fast does the obstacle move in units per second")]
-	private float speed = 15;
+	public float speed = 15;
     [Tooltip("How long does the obstacle life before it is automatically destroyed, in seconds")]
     public float lifeTime = 10;
     Vector2 direction = new Vector2();
