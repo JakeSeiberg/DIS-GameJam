@@ -444,6 +444,53 @@ MonoBehaviour:
   speed: 2
   minX: -5.6
   maxX: 5.6
+--- !u!1 &1090021459
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1090021460}
+  - component: {fileID: 1090021461}
+  m_Layer: 0
+  m_Name: StationaryObstacleSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1090021460
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090021459}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.014770415, y: 0.6199999, z: 0.038057093}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1211361812}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1090021461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090021459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a16a5676ebb4942199bd8de511888c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnWidth: 6.3
+  spawnRate: 1
+  obstaclePrefab: {fileID: 5255183168034384911, guid: 491ca7928064741c8923931dcf4beabd, type: 3}
 --- !u!1 &1211361810
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,6 +501,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1211361812}
   - component: {fileID: 1211361811}
+  - component: {fileID: 1211361813}
   m_Layer: 0
   m_Name: ObstacleSpawner
   m_TagString: Untagged
@@ -488,9 +536,25 @@ Transform:
   m_LocalPosition: {x: 0.04, y: 5.83, z: -0.018234562}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1090021460}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1211361813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211361810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a16a5676ebb4942199bd8de511888c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnWidth: 6.3
+  spawnRate: 1
+  obstaclePrefab: {fileID: 5255183168034384911, guid: 491ca7928064741c8923931dcf4beabd, type: 3}
 --- !u!1 &1603195170
 GameObject:
   m_ObjectHideFlags: 0
