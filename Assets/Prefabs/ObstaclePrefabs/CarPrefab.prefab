@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -7457771660087075820}
   - component: {fileID: 7604326245442664224}
   m_Layer: 0
-  m_Name: RedCarPrefab
+  m_Name: CarPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,10 +91,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2522395246819852605, guid: b3e5cc9ae945e46a48f1881de5592b87, type: 3}
+  m_Sprite: {fileID: -7695535699446604902, guid: d5636b63862574d858e4b7fa0e3a6c47, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 9.6, y: 4.76}
   m_AdaptiveModeThreshold: 0.5
