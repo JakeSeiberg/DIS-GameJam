@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: 4f1f97a0c052840b8b9c9d3ee973977a
+  productGUID: 238049b70b2324561ac4f15a0f79aae1
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: CPH Bike Hopper
+  productName: CPH_Bike_Hopper
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -609,14 +609,14 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: CPH Bike Hopper
+  metroPackageName: CPH_Bike_Hopper
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: CPH Bike Hopper
+  metroApplicationDescription: CPH_Bike_Hopper
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -687,11 +687,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 41d2d4b2-4b36-4ad1-a00d-8dc1e9bca649
+  cloudProjectId: 38722ef1-ec56-4776-b357-866994f41e6d
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: CPH Bike Hopper
-  organizationId: jacobseiberg
+  projectName: CPH_Bike_Hopper
+  organizationId: tylermg26
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
