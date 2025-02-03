@@ -5,16 +5,21 @@ public class BeerPickup : MonoBehaviour
     [Tooltip("Duration (in seconds) for which the bike controls will be inverted.")]
     public float inversionDuration = 5f;
 
-    [Tooltip("How fast does the obstacle move in units per second")]
-	public float speed = 15;
+	private float speed = RoadSpawner.gameSpeed;
+
     [Tooltip("How long does the obstacle life before it is automatically destroyed, in seconds")]
     public float lifeTime = 10;
     Vector2 direction = new Vector2();
+
+    private Timer time;
 
     void Start()
     {
         direction = new Vector2(0,-1);
         direction.Normalize();
+
+        time = FindFirstObjectByType<Timer>();
+
     }
 
     // Update is called once per frame
@@ -35,6 +40,7 @@ public class BeerPickup : MonoBehaviour
         {
             // Invert the bike's controls for the specified duration.
             bike.ActivateControlInversion(inversionDuration);
+            time.loseTime(5);
             
             // Optionally, add sound or visual effects here.
             

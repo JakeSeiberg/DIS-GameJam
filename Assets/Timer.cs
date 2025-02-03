@@ -7,10 +7,13 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI timerText;
 
     static public float currentTime = 60;
+
+    private RedBox box;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        box = FindFirstObjectByType<RedBox>();
     }
 
     // Update is called once per frame
@@ -23,14 +26,8 @@ public class Timer : MonoBehaviour
     public void loseTime(int seconds)
     {
         currentTime -= seconds;
-        StartCoroutine(redText());
+        if (seconds > 0):
+            box.takeDamage();
     }
 
-
-    private IEnumerator redText()
-    {
-        timerText.color = Color.red;
-        yield return new WaitForSeconds(2f);
-        timerText.color = Color.black;
-    }
 }
