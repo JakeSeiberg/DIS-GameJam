@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -606,8 +606,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 29
+  m_fontSizeBase: 29
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -674,7 +674,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -218.8, y: 111.5}
+  m_AnchoredPosition: {x: -346.31, y: 174.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &892019690
@@ -1183,7 +1183,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f17671957df7449ddaa7db01deee5f1e, type: 3}
   - {fileID: 21300000, guid: 079c5dc7cabe944728c88d9c39b9e9c4, type: 3}
   - {fileID: 21300000, guid: 7bc87d1436a6044e4a68125d3740a44d, type: 3}
-  cigsCount: 0
 --- !u!212 &1936579927
 SpriteRenderer:
   m_ObjectHideFlags: 0
