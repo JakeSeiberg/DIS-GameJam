@@ -13,6 +13,7 @@ public class TextController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        textObject.enabled = false;
     }
 
     // Update is called once per frame
@@ -23,8 +24,28 @@ public class TextController : MonoBehaviour
         textObject.transform.position = bikeScreenPosition;
     }
 
-    void points(int points)
+    public void points(float points)
     {
-        textObject.text = points.ToString();
+        StartCoroutine(showPoints(points));
     }
+
+    private IEnumerator showPoints(float points)
+    {   
+        textObject.enabled = false;
+        int intPoints = Mathf.RoundToInt(points);
+
+        textObject.text = intPoints.ToString();
+        textObject.enabled = true;
+
+        yield return new WaitForSeconds(1.5f);
+
+        textObject.enabled = false;
+
+    }
+
 }
+
+
+
+
+

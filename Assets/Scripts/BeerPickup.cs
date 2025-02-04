@@ -7,6 +7,8 @@ public class BeerPickup : MonoBehaviour
 
 	private float speed = RoadSpawner.gameSpeed;
 
+    private TextController pointsText;
+
     [Tooltip("How long does the obstacle life before it is automatically destroyed, in seconds")]
     public float lifeTime = 10;
     Vector2 direction = new Vector2();
@@ -23,6 +25,9 @@ public class BeerPickup : MonoBehaviour
         time = FindFirstObjectByType<Timer>();
 
         box = FindFirstObjectByType<YellowSpiral>();
+
+        pointsText = FindFirstObjectByType<TextController>();
+
 
     }
 
@@ -45,6 +50,7 @@ public class BeerPickup : MonoBehaviour
             // Invert the bike's controls for the specified duration.
             bike.ActivateControlInversion(inversionDuration);
             Timer.currentTime -= 5;
+            pointsText.points(-5);
             box.spin();
             
             // Optionally, add sound or visual effects here.
