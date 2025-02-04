@@ -12,7 +12,7 @@ public class RoadSpawner : MonoBehaviour
     void Start()
     {
         _roadLength = RoadPrefab.GetComponent<Renderer>().bounds.size.y;
-
+        gameSpeed = 6f;
         // Spawn initial roads to cover movement
         for (int i = -1; i <= 1; i++)
         {
