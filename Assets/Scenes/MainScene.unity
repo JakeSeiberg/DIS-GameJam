@@ -174,7 +174,6 @@ GameObject:
   - component: {fileID: 381350827}
   - component: {fileID: 381350830}
   - component: {fileID: 381350829}
-  - component: {fileID: 381350828}
   m_Layer: 0
   m_Name: LeftObstacleSpawner
   m_TagString: Untagged
@@ -197,24 +196,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1661462436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &381350828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 381350826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2770eba04099b4feda83a1bff4148c5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnWidth: 0.9
-  spawnRate: 0.6
-  minSpawnrate: 0.02
-  maxSpawnrate: 0.06
-  offsetFromStart: 30
-  obstaclePrefab: {fileID: 5739088919721828745, guid: 6c8466bc2c5b04a3faa58d21be433391, type: 3}
 --- !u!114 &381350829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,10 +209,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnWidth: 0.9
-  spawnRate: 0.02
-  minSpawnrate: 0.5
-  maxSpawnrate: 2
-  offsetFromStart: 20
+  spawnRate: 1
+  minSpawnrate: 0.1
+  maxSpawnrate: 0.3
+  offsetFromStart: 24
   obstaclePrefab: {fileID: 8234237812908993086, guid: d8d3dd70df77540a4add04d9372759fa, type: 3}
 --- !u!114 &381350830
 MonoBehaviour:
@@ -246,9 +227,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnWidth: 0.9
-  spawnRate: 0.6
-  minSpawnrate: 0.1
-  maxSpawnrate: 0.9
+  spawnRate: 1
+  minSpawnrate: 0.2
+  maxSpawnrate: 0.8
   offsetFromStart: 14
   obstaclePrefab: {fileID: 4842759429560041282, guid: affb418a6bd024135ad1d9d67627c1f6, type: 3}
 --- !u!1 &388834840
@@ -712,6 +693,56 @@ RectTransform:
   m_AnchoredPosition: {x: -0.000015258789, y: 0.000015258789}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &733381139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 733381140}
+  - component: {fileID: 733381141}
+  m_Layer: 0
+  m_Name: TruckSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &733381140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733381139}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.010000002, y: 0.66, z: 0.018234562}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1661462436}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &733381141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733381139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2770eba04099b4feda83a1bff4148c5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnWidth: 6.3
+  spawnRate: 1
+  minSpawnrate: 0.1
+  maxSpawnrate: 0.4
+  offsetFromStart: 25
+  obstaclePrefab: {fileID: 5739088919721828745, guid: 6c8466bc2c5b04a3faa58d21be433391, type: 3}
 --- !u!1 &768604957
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,7 +946,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969193781}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -1225,7 +1256,6 @@ GameObject:
   - component: {fileID: 1032478557}
   - component: {fileID: 1032478560}
   - component: {fileID: 1032478559}
-  - component: {fileID: 1032478558}
   m_Layer: 0
   m_Name: InnerRightObstacleSpawner
   m_TagString: Untagged
@@ -1248,24 +1278,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1661462436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1032478558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032478556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2770eba04099b4feda83a1bff4148c5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnWidth: 0.9
-  spawnRate: 0.6
-  minSpawnrate: 0.02
-  maxSpawnrate: 0.06
-  offsetFromStart: 30
-  obstaclePrefab: {fileID: 5739088919721828745, guid: 6c8466bc2c5b04a3faa58d21be433391, type: 3}
 --- !u!114 &1032478559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1279,10 +1291,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnWidth: 0.9
-  spawnRate: 0.02
-  minSpawnrate: 0.5
-  maxSpawnrate: 2
-  offsetFromStart: 20
+  spawnRate: 1
+  minSpawnrate: 0.1
+  maxSpawnrate: 0.3
+  offsetFromStart: 22
   obstaclePrefab: {fileID: 8234237812908993086, guid: d8d3dd70df77540a4add04d9372759fa, type: 3}
 --- !u!114 &1032478560
 MonoBehaviour:
@@ -1297,9 +1309,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnWidth: 0.9
-  spawnRate: 0.6
-  minSpawnrate: 0.1
-  maxSpawnrate: 0.9
+  spawnRate: 1
+  minSpawnrate: 0.2
+  maxSpawnrate: 0.8
   offsetFromStart: 12
   obstaclePrefab: {fileID: 4842759429560041282, guid: affb418a6bd024135ad1d9d67627c1f6, type: 3}
 --- !u!1 &1154846920
@@ -1558,7 +1570,6 @@ GameObject:
   - component: {fileID: 1611088910}
   - component: {fileID: 1611088913}
   - component: {fileID: 1611088912}
-  - component: {fileID: 1611088911}
   m_Layer: 0
   m_Name: InnerLeftObstacleSpawner
   m_TagString: Untagged
@@ -1581,24 +1592,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1661462436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1611088911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1611088909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2770eba04099b4feda83a1bff4148c5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnWidth: 0.9
-  spawnRate: 0.6
-  minSpawnrate: 0.02
-  maxSpawnrate: 0.06
-  offsetFromStart: 30
-  obstaclePrefab: {fileID: 5739088919721828745, guid: 6c8466bc2c5b04a3faa58d21be433391, type: 3}
 --- !u!114 &1611088912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1612,10 +1605,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnWidth: 0.9
-  spawnRate: 0.02
-  minSpawnrate: 0.5
-  maxSpawnrate: 2
-  offsetFromStart: 20
+  spawnRate: 1
+  minSpawnrate: 0.1
+  maxSpawnrate: 0.3
+  offsetFromStart: 26
   obstaclePrefab: {fileID: 8234237812908993086, guid: d8d3dd70df77540a4add04d9372759fa, type: 3}
 --- !u!114 &1611088913
 MonoBehaviour:
@@ -1630,10 +1623,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnWidth: 0.9
-  spawnRate: 0.6
-  minSpawnrate: 0.1
-  maxSpawnrate: 0.9
-  offsetFromStart: 12
+  spawnRate: 1
+  minSpawnrate: 0.2
+  maxSpawnrate: 0.8
+  offsetFromStart: 16
   obstaclePrefab: {fileID: 4842759429560041282, guid: affb418a6bd024135ad1d9d67627c1f6, type: 3}
 --- !u!1 &1634561133
 GameObject:
@@ -1646,7 +1639,6 @@ GameObject:
   - component: {fileID: 1634561134}
   - component: {fileID: 1634561137}
   - component: {fileID: 1634561136}
-  - component: {fileID: 1634561135}
   m_Layer: 0
   m_Name: RightObstacleSpawner
   m_TagString: Untagged
@@ -1669,24 +1661,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1661462436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1634561135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1634561133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2770eba04099b4feda83a1bff4148c5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnWidth: 0.9
-  spawnRate: 0.6
-  minSpawnrate: 0.02
-  maxSpawnrate: 0.06
-  offsetFromStart: 30
-  obstaclePrefab: {fileID: 5739088919721828745, guid: 6c8466bc2c5b04a3faa58d21be433391, type: 3}
 --- !u!114 &1634561136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1700,9 +1674,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnWidth: 0.9
-  spawnRate: 0.02
-  minSpawnrate: 0.5
-  maxSpawnrate: 2
+  spawnRate: 1
+  minSpawnrate: 0.1
+  maxSpawnrate: 0.3
   offsetFromStart: 20
   obstaclePrefab: {fileID: 8234237812908993086, guid: d8d3dd70df77540a4add04d9372759fa, type: 3}
 --- !u!114 &1634561137
@@ -1718,9 +1692,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnWidth: 0.9
-  spawnRate: 0.6
-  minSpawnrate: 0.1
-  maxSpawnrate: 0.9
+  spawnRate: 1
+  minSpawnrate: 0.2
+  maxSpawnrate: 0.8
   offsetFromStart: 10
   obstaclePrefab: {fileID: 4842759429560041282, guid: affb418a6bd024135ad1d9d67627c1f6, type: 3}
 --- !u!1 &1661462431
@@ -1831,6 +1805,7 @@ Transform:
   - {fileID: 1032478557}
   - {fileID: 381350827}
   - {fileID: 1611088910}
+  - {fileID: 733381140}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1706254131
