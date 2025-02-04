@@ -7,7 +7,7 @@ public class CigsSpawner : MonoBehaviour
     public float spawnWidth = 1f;
     
     [Tooltip("How many pickups spawn per second?")]
-    public float spawnRate = 1f;
+    public float spawnRate = 1.5f;
     
     [Tooltip("The cigarette pickup prefab.")]
     public GameObject cigsPrefab;

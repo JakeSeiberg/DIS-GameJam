@@ -13,7 +13,7 @@ public class RampUp : MonoBehaviour
     void Update()
     {
         if(checkForRampup()){
-            RoadSpawner.gameSpeed += 5;
+            RoadSpawner.gameSpeed += 3;
         }
     }
 
