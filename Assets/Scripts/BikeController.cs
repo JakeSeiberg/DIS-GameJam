@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UIElements;
+using System.Drawing;
 
 public class BikeController : MonoBehaviour
 {
@@ -72,6 +73,7 @@ public class BikeController : MonoBehaviour
         if (!timeLost){
             StartCoroutine(IFrameCoroutine());
         }
+        
     }
     private IEnumerator IFrameCoroutine()
     {

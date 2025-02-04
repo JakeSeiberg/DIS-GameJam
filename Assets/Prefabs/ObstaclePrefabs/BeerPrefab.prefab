@@ -101,9 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37b7e62c932424c00b95050113f18947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inversionDuration: 5
-  speed: 10
   lifeTime: 10
+  gulp: {fileID: 8300000, guid: 0baf83d048d0d4675b3117bae0a6a56e, type: 3}
 --- !u!61 &971905026620774487
 BoxCollider2D:
   m_ObjectHideFlags: 0

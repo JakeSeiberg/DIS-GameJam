@@ -16,6 +16,8 @@ public class BeerPickup : MonoBehaviour
     private Timer time;
 
     private YellowSpiral box;
+    public AudioClip gulp;
+    private AudioSource source;
 
     void Start()
     {
@@ -27,6 +29,7 @@ public class BeerPickup : MonoBehaviour
         box = FindFirstObjectByType<YellowSpiral>();
 
         pointsText = FindFirstObjectByType<TextController>();
+        source = GetComponent<AudioSource>();
 
 
     }
@@ -59,6 +62,10 @@ public class BeerPickup : MonoBehaviour
             // Destroy the beer pickup after the collision.
             Destroy(gameObject);
         }
+    }
+
+    void OnCollisionEnter2D(){
+        source.PlayOneShot(gulp);
     }
 }
 

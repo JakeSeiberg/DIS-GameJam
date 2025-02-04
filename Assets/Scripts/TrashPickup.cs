@@ -13,6 +13,8 @@ public class TrashPickup : MonoBehaviour
     private Timer time;
 
     private TextController pointsText;
+    public AudioClip trash;
+    private AudioSource source;
 
 
     void Start()
@@ -23,6 +25,7 @@ public class TrashPickup : MonoBehaviour
         time = FindFirstObjectByType<Timer>();
 
         pointsText = FindFirstObjectByType<TextController>();
+        source = GetComponent<AudioSource>();
 
 
     }
@@ -59,5 +62,9 @@ public class TrashPickup : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+
+    void OnCollisionEnter2D(){
+        source.PlayOneShot(trash);
     }
 }

@@ -11,7 +11,8 @@ public class CigsPickup : MonoBehaviour
     private Timer time;
 
     private TextController pointsText;
-
+    public AudioClip smoke;
+    private AudioSource source;
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class CigsPickup : MonoBehaviour
         time = FindFirstObjectByType<Timer>();
 
         pointsText = FindFirstObjectByType<TextController>();
-
+        source = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -55,5 +56,9 @@ public class CigsPickup : MonoBehaviour
             // Destroy the cigarette pickup upon collection.
             Destroy(gameObject);
         }
+    }
+
+    void OnCollisionEnter2D(){
+        source.PlayOneShot(smoke);
     }
 }
