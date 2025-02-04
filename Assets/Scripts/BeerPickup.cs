@@ -34,6 +34,7 @@ public class BeerPickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        speed = RoadSpawner.gameSpeed;
         transform.position = transform.position + new Vector3(direction.x, direction.y, 0) * speed * Time.deltaTime;
 		lifeTime -= Time.deltaTime;
 		if(lifeTime <= 0){
