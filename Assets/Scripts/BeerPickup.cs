@@ -3,7 +3,7 @@ using UnityEngine;
 public class BeerPickup : MonoBehaviour
 {
     [Tooltip("Duration (in seconds) for which the bike controls will be inverted.")]
-    public float inversionDuration = 5f;
+    static public float inversionDuration = 5f;
 
 	private float speed = RoadSpawner.gameSpeed;
 
@@ -13,12 +13,16 @@ public class BeerPickup : MonoBehaviour
 
     private Timer time;
 
+    private YellowSpiral box;
+
     void Start()
     {
         direction = new Vector2(0,-1);
         direction.Normalize();
 
         time = FindFirstObjectByType<Timer>();
+
+        box = FindFirstObjectByType<YellowSpiral>();
 
     }
 
@@ -40,7 +44,8 @@ public class BeerPickup : MonoBehaviour
         {
             // Invert the bike's controls for the specified duration.
             bike.ActivateControlInversion(inversionDuration);
-            time.loseTime(5);
+            Timer.currentTime -= 5;
+            box.spin();
             
             // Optionally, add sound or visual effects here.
             
