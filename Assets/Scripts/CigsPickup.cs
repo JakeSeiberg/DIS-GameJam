@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class CigsPickup : MonoBehaviour
 {
-    [Header("Movement Settings")]
-    [Tooltip("How fast does the cigarette pickup move (units per second)?")]
-    public float speed = RoadSpawner.gameSpeed;
     
     [Tooltip("How long does the pickup live before being automatically destroyed (in seconds)?")]
     public float lifeTime = 10f;
@@ -28,7 +25,7 @@ public class CigsPickup : MonoBehaviour
     void Update()
     {
         // Move the pickup downward
-        transform.position += new Vector3(direction.x, direction.y, 0) * speed * Time.deltaTime;
+        transform.position += new Vector3(direction.x, direction.y, 0) * RoadSpawner.gameSpeed * Time.deltaTime;
         
         // Decrease lifetime and destroy if expired
         lifeTime -= Time.deltaTime;
