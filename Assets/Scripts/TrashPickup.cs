@@ -33,7 +33,7 @@ public class TrashPickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = transform.position + new Vector3(direction.x, direction.y, 0) * speed * Time.deltaTime;
+        transform.position = transform.position + new Vector3(direction.x, direction.y, 0) * RoadSpawner.gameSpeed * Time.deltaTime;
 		lifeTime -= Time.deltaTime;
 		if(lifeTime <= 0){
 			Destroy(gameObject);
