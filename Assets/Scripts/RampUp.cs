@@ -6,14 +6,14 @@ public class RampUp : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        interval = 30;
+        interval = 15;
     }
 
     // Update is called once per frame
     void Update()
     {
         if(checkForRampup()){
-            RoadSpawner.gameSpeed += 3;
+            RoadSpawner.gameSpeed += 1;
         }
     }
 
