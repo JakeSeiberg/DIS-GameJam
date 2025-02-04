@@ -39,7 +39,7 @@ public class CigsScript : MonoBehaviour
     private IEnumerator cigReset(){
         if (full == true){
             time.loseTime(-15); 
-            pointsText.points("-15");
+            pointsText.points("+15");
             full = false;
         }
         yield return new WaitForSeconds(1.5f);

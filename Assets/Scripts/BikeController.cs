@@ -18,6 +18,8 @@ public class BikeController : MonoBehaviour
     private Vector3 playerPosition;
     private TextController pointsText;
 
+    private bool spinning = false;
+
 
     void Start(){
         time = FindFirstObjectByType<Timer>();
@@ -42,6 +44,15 @@ public class BikeController : MonoBehaviour
         Vector3 targetPosition = new Vector3(targetX, transform.position.y, transform.position.z);
 
         transform.position = Vector3.Lerp(transform.position, targetPosition, speed * Time.deltaTime);
+
+        if (spinning){
+            transform.Rotate(0,0, 360 * Time.deltaTime);
+        }
+
+        Vector3 pos = transform.position;
+        pos.y = -3.79f;
+        transform.position = pos;
+
     }
 
     public void ActivateControlInversion(float duration)
@@ -68,14 +79,26 @@ public class BikeController : MonoBehaviour
         pointsText.points("-10");
         timeLost = true;
 
-        yield return new WaitForSeconds(0.5f);
-        Physics2D.IgnoreLayerCollision(6,7, true);
-        yield return new WaitForSeconds(1);
-        Physics2D.IgnoreLayerCollision(6,7, false);
-        playerPosition = transform.position;
-        playerPosition.y = -3.5f;
-        transform.position = playerPosition;
+        yield return StartCoroutine(SpinCoroutine());
 
         timeLost = false;
+    }
+
+    private IEnumerator SpinCoroutine()
+    {
+        spinning = true;
+        float rotationAmount = 0f;
+        float rotationSpeed = 360f; // degrees per second
+
+        while (rotationAmount < 180f - Mathf.Epsilon)
+        {
+            float rotationStep = rotationSpeed * Time.deltaTime;
+            transform.Rotate(0, 0, rotationStep);
+            rotationAmount += rotationStep;
+            yield return null;
+        }
+
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+        spinning = false;
     }
 }
