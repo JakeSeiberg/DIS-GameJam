@@ -8,6 +8,8 @@ public class TrashPickup : MonoBehaviour
     public float lifeTime = 10;
     Vector2 direction = new Vector2();
 
+    public GameObject[] trashVariants;
+
     private Timer time;
 
     void Start()
@@ -40,8 +42,14 @@ public class TrashPickup : MonoBehaviour
             
             // Optionally, add sound or visual effects here.
             
+            Instantiate(trashVariants[0], transform.position, transform.rotation);
+            Instantiate(trashVariants[1], transform.position, transform.rotation);
+            Instantiate(trashVariants[2], transform.position, transform.rotation);
+            Instantiate(trashVariants[3], transform.position, transform.rotation);
+
             // Destroy the trash pickup after the collision.
             Destroy(gameObject);
         }
+
     }
 }
