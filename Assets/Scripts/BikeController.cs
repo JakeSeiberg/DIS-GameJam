@@ -3,6 +3,8 @@ using System.Collections;
 
 public class BikeController : MonoBehaviour
 {
+    private bool isHit = false;
+
     [Header("Movement Settings")]
     public float speed = 2f;
     
@@ -14,6 +16,10 @@ public class BikeController : MonoBehaviour
 
     void Update()
     {
+        if (isHit){
+            print("uhoh");
+            isHit = false;
+        }
         float mouseXNormalized = Input.mousePosition.x / Screen.width;
 
         if(isInverted)
@@ -40,5 +46,11 @@ public class BikeController : MonoBehaviour
         isInverted = true;
         yield return new WaitForSeconds(duration);
         isInverted = false;
+    }
+    void OnTriggerEnter2D(Collider2D other){
+        if(other.GetComponent<CarObstacle>() != null)
+        {
+			isHit = true;
+        }
     }
 }
