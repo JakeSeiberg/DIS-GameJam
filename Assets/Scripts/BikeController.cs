@@ -13,6 +13,14 @@ public class BikeController : MonoBehaviour
 
     private bool isInverted = false;
 
+    private Timer time;
+    private bool timeLost;
+
+    void Start(){
+        time = FindFirstObjectByType<Timer>();
+        timeLost = false;
+    }
+
     void Update()
     {
         float mouseXNormalized = Input.mousePosition.x / Screen.width;
@@ -43,10 +51,15 @@ public class BikeController : MonoBehaviour
         isInverted = false;
     }
     void OnCollisionEnter2D(Collision2D other){
-        StartCoroutine(IFrameCoroutine());
+        if (!timeLost){
+            StartCoroutine(IFrameCoroutine());
+        }
     }
     private IEnumerator IFrameCoroutine()
     {
+        time.loseTime(10); 
+        timeLost = true;
+
         yield return new WaitForSeconds(0.5f);
         Physics2D.IgnoreLayerCollision(6,7, true);
         yield return new WaitForSeconds(1);
@@ -54,6 +67,7 @@ public class BikeController : MonoBehaviour
         Vector3 playerPosition = transform.position;
         playerPosition.y = -3.5f;
         transform.position = playerPosition;
-        Timer.currentTime -= 10;
+
+        timeLost = false;
     }
 }
