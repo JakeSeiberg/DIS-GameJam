@@ -12,12 +12,18 @@ public class TrashPickup : MonoBehaviour
 
     private Timer time;
 
+    private TextController pointsText;
+
+
     void Start()
     {
         direction = new Vector2(0,-1);
         direction.Normalize();
 
         time = FindFirstObjectByType<Timer>();
+
+        pointsText = FindFirstObjectByType<TextController>();
+
 
     }
 
@@ -39,6 +45,8 @@ public class TrashPickup : MonoBehaviour
         {
             // Invert the bike's controls for the specified duration.
             time.loseTime(5);
+            pointsText.points("-5");
+
             
             // Optionally, add sound or visual effects here.
             

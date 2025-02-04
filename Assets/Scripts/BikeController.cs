@@ -16,11 +16,16 @@ public class BikeController : MonoBehaviour
     private Timer time;
     private bool timeLost;
     private Vector3 playerPosition;
+    private TextController pointsText;
+
 
     void Start(){
         time = FindFirstObjectByType<Timer>();
         timeLost = false;
         playerPosition = new Vector3(0,0,0);
+
+        pointsText = FindFirstObjectByType<TextController>();
+
     }
 
     void Update()
@@ -60,6 +65,7 @@ public class BikeController : MonoBehaviour
     private IEnumerator IFrameCoroutine()
     {
         time.loseTime(10); 
+        pointsText.points("-10");
         timeLost = true;
 
         yield return new WaitForSeconds(0.5f);

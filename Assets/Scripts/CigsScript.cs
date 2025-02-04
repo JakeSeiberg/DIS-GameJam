@@ -11,6 +11,8 @@ public class CigsScript : MonoBehaviour
     private Timer time;
     private bool full;
     private bool timeLost;
+    private TextController pointsText;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,6 +21,8 @@ public class CigsScript : MonoBehaviour
         cigsCount = 0;
         time = FindFirstObjectByType<Timer>();
         timeLost = false;
+        pointsText = FindFirstObjectByType<TextController>();
+
     }
 
     // Update is called once per frame
@@ -35,6 +39,7 @@ public class CigsScript : MonoBehaviour
     private IEnumerator cigReset(){
         if (full == true){
             time.loseTime(-15); 
+            pointsText.points("-15");
             full = false;
         }
         yield return new WaitForSeconds(1.5f);

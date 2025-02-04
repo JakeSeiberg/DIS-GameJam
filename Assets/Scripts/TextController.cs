@@ -24,17 +24,16 @@ public class TextController : MonoBehaviour
         textObject.transform.position = bikeScreenPosition;
     }
 
-    public void points(float points)
+    public void points(string points)
     {
         StartCoroutine(showPoints(points));
     }
 
-    private IEnumerator showPoints(float points)
+    private IEnumerator showPoints(string points)
     {   
         textObject.enabled = false;
-        int intPoints = Mathf.RoundToInt(points);
 
-        textObject.text = intPoints.ToString();
+        textObject.text = points;
         textObject.enabled = true;
 
         yield return new WaitForSeconds(1.5f);

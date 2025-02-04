@@ -50,7 +50,7 @@ public class BeerPickup : MonoBehaviour
             // Invert the bike's controls for the specified duration.
             bike.ActivateControlInversion(inversionDuration);
             Timer.currentTime -= 5;
-            pointsText.points(-5);
+            pointsText.points("-5");
             box.spin();
             
             // Optionally, add sound or visual effects here.

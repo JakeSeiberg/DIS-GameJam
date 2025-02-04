@@ -13,10 +13,16 @@ public class CigsPickup : MonoBehaviour
     private Vector2 direction = new Vector2(0, -1);
     private Timer time;
 
+    private TextController pointsText;
+
+
     void Start()
     {
         direction.Normalize();
         time = FindFirstObjectByType<Timer>();
+
+        pointsText = FindFirstObjectByType<TextController>();
+
     }
 
     void Update()
@@ -45,6 +51,8 @@ public class CigsPickup : MonoBehaviour
             {
                 CigsScript.cigsCount++;
                 time.loseTime(-3); 
+                pointsText.points("+3");
+
             }
             
             // Destroy the cigarette pickup upon collection.
