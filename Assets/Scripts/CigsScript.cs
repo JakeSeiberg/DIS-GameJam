@@ -23,6 +23,7 @@ public class CigsScript : MonoBehaviour
         cigsRenderer.sprite = cigsImages[cigsCount % cigsImages.Length];
         if(cigsCount > 7){
             cigsCount = 0;
+            GameOverChecker.score += 30;
         }
     }
 }
