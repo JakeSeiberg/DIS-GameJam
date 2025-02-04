@@ -15,10 +15,12 @@ public class BikeController : MonoBehaviour
 
     private Timer time;
     private bool timeLost;
+    private Vector3 playerPosition;
 
     void Start(){
         time = FindFirstObjectByType<Timer>();
         timeLost = false;
+        playerPosition = new Vector3(0,0,0);
     }
 
     void Update()
@@ -64,7 +66,7 @@ public class BikeController : MonoBehaviour
         Physics2D.IgnoreLayerCollision(6,7, true);
         yield return new WaitForSeconds(1);
         Physics2D.IgnoreLayerCollision(6,7, false);
-        Vector3 playerPosition = transform.position;
+        playerPosition = transform.position;
         playerPosition.y = -3.5f;
         transform.position = playerPosition;
 
