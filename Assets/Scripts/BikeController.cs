@@ -71,6 +71,8 @@ public class BikeController : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D other){
         if (!timeLost){
+            StopAllCoroutines();
+            spinning = false;
             StartCoroutine(IFrameCoroutine());
         }
         
