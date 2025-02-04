@@ -12,7 +12,6 @@ public class BikeController : MonoBehaviour
     public float maxX = 5.6f;
 
     private bool isInverted = false;
-    private float iFrameDuration;
 
     void Update()
     {
@@ -50,11 +49,11 @@ public class BikeController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         Physics2D.IgnoreLayerCollision(6,7, true);
-        print("bruh");
         yield return new WaitForSeconds(1);
         Physics2D.IgnoreLayerCollision(6,7, false);
         Vector3 playerPosition = transform.position;
         playerPosition.y = -3.5f;
         transform.position = playerPosition;
+        Timer.currentTime -= 10;
     }
 }

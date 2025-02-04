@@ -400,6 +400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1022542514}
   - component: {fileID: 1022542515}
+  - component: {fileID: 1022542516}
   m_Layer: 0
   m_Name: StationaryObstacleSpawner
   m_TagString: Untagged
@@ -443,6 +444,24 @@ MonoBehaviour:
   minSpawnrate: 0.2
   maxSpawnrate: 1
   obstaclePrefab: {fileID: 5255183168034384911, guid: 491ca7928064741c8923931dcf4beabd, type: 3}
+--- !u!114 &1022542516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022542512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2770eba04099b4feda83a1bff4148c5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnWidth: 1
+  spawnRate: 1
+  minSpawnrate: 0.2
+  maxSpawnrate: 1
+  offsetFromStart: 10
+  obstaclePrefab: {fileID: 5739088919721828745, guid: 6c8466bc2c5b04a3faa58d21be433391, type: 3}
 --- !u!1 &1177770425
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,7 +642,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -820,7 +839,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &1731718943
 GameObject:
   m_ObjectHideFlags: 0
