@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8603860891026638202}
   - component: {fileID: -1576724881239489979}
   - component: {fileID: -3444567556263963899}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TrashPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

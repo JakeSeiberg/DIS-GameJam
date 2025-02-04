@@ -1,10 +1,9 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UIElements;
 
 public class BikeController : MonoBehaviour
 {
-    private bool isHit = false;
-
     [Header("Movement Settings")]
     public float speed = 2f;
     
@@ -13,13 +12,10 @@ public class BikeController : MonoBehaviour
     public float maxX = 5.6f;
 
     private bool isInverted = false;
+    private float iFrameDuration;
 
     void Update()
     {
-        if (isHit){
-            print("uhoh");
-            isHit = false;
-        }
         float mouseXNormalized = Input.mousePosition.x / Screen.width;
 
         if(isInverted)
@@ -47,10 +43,18 @@ public class BikeController : MonoBehaviour
         yield return new WaitForSeconds(duration);
         isInverted = false;
     }
-    void OnTriggerEnter2D(Collider2D other){
-        if(other.GetComponent<CarObstacle>() != null)
-        {
-			isHit = true;
-        }
+    void OnCollisionEnter2D(Collision2D other){
+        StartCoroutine(IFrameCoroutine());
+    }
+    private IEnumerator IFrameCoroutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Physics2D.IgnoreLayerCollision(6,7, true);
+        print("bruh");
+        yield return new WaitForSeconds(1);
+        Physics2D.IgnoreLayerCollision(6,7, false);
+        Vector3 playerPosition = transform.position;
+        playerPosition.y = -3.5f;
+        transform.position = playerPosition;
     }
 }
